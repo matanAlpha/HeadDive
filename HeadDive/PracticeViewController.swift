@@ -8,42 +8,32 @@
 
 import UIKit
 
-class QuizViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class PracticeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
- 
+    let animals: [String] = ["Horse", "Cow", "Camel", "Sheep", "Goat"]
     
     let cellReuseIdentifier = "cell"
     let cellSpacingHeight: CGFloat = 5
     
     var tappedAnswerIndex : IndexPath?
-    var originalLayerSet  = false
-    
-    
-    var cornerRadius: CGFloat?
-    
-    var borderWidth: CGFloat?
-    
-    var borderColor: CGColor?
-    
+    var originalCellLayer : CALayer?
     
     var quiz : Quiz?
     
-    @IBOutlet weak var questionText: UILabel!
     
     @IBOutlet weak var tableView: UITableView!
+ 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
         tableView.delegate = self
         tableView.dataSource = self
-        questionText.text = currentQuestion.question
-
         // Do any additional setup after loading the view.
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return currentQuestion.getAnswerCount()
+        return self.animals.count
     }
     
     // There is just one row in every section
@@ -70,52 +60,30 @@ class QuizViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
     
-    var currentQuestion : Question {
-        get
-        {
-             return (self.quiz?.currentQuesion)!
-        }
-    }
     
     // create a cell for each table view row
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell:UITableViewCell = self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as UITableViewCell!
             // note that indexPath.section is used rather than indexPath.row
-            cell.textLabel?.text = currentQuestion.getAnswerByIndex(index: indexPath.section)
+            cell.textLabel?.text = self.animals[indexPath.section]
             // add border and color
             cell.backgroundColor = UIColor.white
-        
-            if(!originalLayerSet)
-            {
-                cornerRadius = cell.layer.cornerRadius
-                borderWidth = cell.layer.borderWidth
-                borderColor = cell.layer.borderColor
-                originalLayerSet = true
-            }
-        
+            originalCellLayer = cell.layer
         return cell
     }
     
     func restoreCell(cell:UITableViewCell)
     {
-        if (originalLayerSet)
+        if let origLayer = originalCellLayer
         {
-            cell.layer.borderColor = borderColor
-            cell.layer.borderWidth = borderWidth!
-            cell.layer.cornerRadius = cornerRadius!
+            cell.layer.borderColor = origLayer.borderColor
+            cell.layer.borderWidth = origLayer.borderWidth
+            cell.layer.cornerRadius = origLayer.cornerRadius
         }
         cell.clipsToBounds = false
     }
     
-    
-    func highlightCell(cell:UITableViewCell)
-    {
-        cell.layer.borderColor = UIColor.black.cgColor
-        cell.layer.borderWidth = 1
-        cell.layer.cornerRadius = 8
-        cell.clipsToBounds = true
-    }
     
     // method to run when table view cell is tapped
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -126,10 +94,16 @@ class QuizViewController: UIViewController, UITableViewDelegate, UITableViewData
             restoreCell(cell: cell)
         }
         
+        
+        
         let cell:UITableViewCell = tableView.cellForRow(at: indexPath) as UITableViewCell!
-        highlightCell(cell: cell)
-
+        cell.layer.borderColor = UIColor.black.cgColor
+        cell.layer.borderWidth = 1
+        cell.layer.cornerRadius = 8
+        cell.clipsToBounds = true
+        
         tappedAnswerIndex = indexPath
+        
         print("You tapped cell number \(indexPath.section).")
     }
     
@@ -147,14 +121,14 @@ class QuizViewController: UIViewController, UITableViewDelegate, UITableViewData
 
 }
 
-extension UIViewController
-{
-    var contentViewControler: UIViewController {
-        if let navCon = self as? UINavigationController {
-          
-            return navCon.visibleViewController ?? self
-        } else {
-            return self
-        }
-    }
-}
+//extension UIViewController
+//{
+//    var contentViewControler: UIViewController {
+//        if let navCon = self as? UINavigationController {
+//          
+//            return navCon.visibleViewController ?? self
+//        } else {
+//            return self
+//        }
+//    }
+//}

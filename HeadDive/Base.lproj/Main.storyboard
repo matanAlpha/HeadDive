@@ -26,12 +26,21 @@
                                     <action selector="showQuiz:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MIe-K6-zQL"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="my9-aM-sQZ">
+                                <frame key="frameInset" minX="104" minY="357" width="103" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Got to practice"/>
+                                <connections>
+                                    <action selector="showPractice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Hh-QA-4Nt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="kRn-Il-LI5"/>
                     <connections>
                         <segue destination="YGn-KA-VVf" kind="show" identifier="showQuiz" id="sTn-mB-x7T"/>
+                        <segue destination="eil-Rz-7mv" kind="show" identifier="showPractice" id="B0z-58-ult"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -75,12 +84,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="Pjz-RF-8yf"/>
                     <connections>
+                        <outlet property="questionText" destination="oJi-ms-T1V" id="TgA-EZ-x5Y"/>
                         <outlet property="tableView" destination="05A-J6-xif" id="K4g-i6-xvr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yZx-iA-cc7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3269.5999999999999" y="133.5832083958021"/>
+            <point key="canvasLocation" x="3062" y="-204"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="85i-t2-bnY">
@@ -99,6 +109,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="50l-P3-sYA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1056.8" y="122.78860569715144"/>
+        </scene>
+        <!--Practice Quiz View Controller-->
+        <scene sceneID="k5l-3V-ILq">
+            <objects>
+                <viewController id="eil-Rz-7mv" userLabel="Practice Quiz View Controller" customClass="PracticeViewController" customModule="HeadDive" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xbx-cm-QFB"/>
+                        <viewControllerLayoutGuide type="bottom" id="QdH-dK-haV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XCV-zt-hBO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Young diver must dive with?" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oHM-Mn-4JX">
+                                <frame key="frameInset" minX="16" minY="72" width="343" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="18w-rW-K35">
+                                <frame key="frameInset" minX="16" minY="187" width="343" height="280"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HzZ-eS-JB1">
+                                <frame key="frameInset" minX="164" minY="537" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Check"/>
+                                <connections>
+                                    <action selector="checkButton:" destination="eil-Rz-7mv" eventType="touchUpInside" id="jy5-IJ-hfX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Dz0-K6-VQj"/>
+                    <connections>
+                        <outlet property="tableView" destination="18w-rW-K35" id="iWg-6O-cAn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YXi-ka-Jep" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3009" y="473"/>
         </scene>
     </scenes>
 </document>

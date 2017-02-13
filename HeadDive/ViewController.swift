@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     private struct StoryBorad
     {
         static let ShowQuizSegue = "showQuiz"
+        static let ShowPracticeSegue = "showPractice"
+        
     }
     
     override func viewDidLoad() {
@@ -33,14 +35,24 @@ class ViewController: UIViewController {
     }
 
   
+    @IBAction func showPractice(_ sender: UIButton) {
+        performSegue(withIdentifier: StoryBorad.ShowPracticeSegue, sender: sender)
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == StoryBorad.ShowQuizSegue {
             if let ivc = segue.destination.contentViewControler as? QuizViewController {
-//                let imageName = (sender as? UIButton)?.currentTitle
-//                ivc.imageURL = DemoURL.NASAImageNamed(imageName: imageName)
-                
-                ivc.title = "Backy"
+                let q = Quiz()
+                q.createDemoQuiz()
+                ivc.quiz = q
+                ivc.title = "Quiz"
+            }
+        } else if segue.identifier == StoryBorad.ShowPracticeSegue {
+            if let ivc = segue.destination.contentViewControler as? PracticeViewController {
+                let q = Quiz()
+                q.createDemoQuiz()
+                ivc.quiz = q
+                ivc.title = "Practice"
             }
         }
     }
