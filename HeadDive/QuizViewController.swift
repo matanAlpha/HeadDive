@@ -64,10 +64,10 @@ class QuizViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     
-    @IBAction func checkButton(_ sender: UIButton) {
-
- 
-        
+   
+    @IBAction func nextButton(_ sender: AnyObject) {
+        self.quiz?.nextQuestion()
+        self.tableView.reloadData()
     }
     
     var currentQuestion : Question {

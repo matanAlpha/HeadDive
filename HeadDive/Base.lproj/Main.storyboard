@@ -72,11 +72,11 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eP8-NJ-Sc1">
-                                <frame key="frameInset" minX="164" minY="537" width="46" height="30"/>
+                                <frame key="frameInset" minX="313" minY="537" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Check"/>
+                                <state key="normal" title="Next"/>
                                 <connections>
-                                    <action selector="checkButton:" destination="YGn-KA-VVf" eventType="touchUpInside" id="Q6r-Ae-h0q"/>
+                                    <action selector="nextButton:" destination="YGn-KA-VVf" eventType="touchUpInside" id="tT6-Fw-jWg"/>
                                 </connections>
                             </button>
                         </subviews>

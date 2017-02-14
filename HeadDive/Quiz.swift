@@ -11,10 +11,46 @@ import Foundation
 class Quiz
 {
     var questions : [Question] = [Question]()
-    var currentQuestionIndex = 0 
+    private var currentQuestionIndex = 0
+    private var isLast = false
     
     var currentQuesion : Question {
         return questions[currentQuestionIndex]
+    }
+    
+    func nextQuestion()
+    {
+        if(!isLast)
+        {
+            currentQuestionIndex += 1
+            if((questions.count-1) == currentQuestionIndex)
+            {
+                isLast = true
+            }
+        }
+    }
+
+    func prevQuestion()
+    {
+        if(currentQuestionIndex > 0)
+        {
+            currentQuestionIndex -= 1
+        }
+    }
+
+    var isLastQuestion : Bool {
+        
+        get
+        {
+            return isLast
+        }
+    }
+    
+    var isFirstQuestion : Bool {
+        get
+        {
+            return currentQuestionIndex == 0
+        }
     }
     
     func createDemoQuiz ()
