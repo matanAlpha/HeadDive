@@ -10,7 +10,7 @@ import Foundation
 
 class Quiz
 {
-    var questions : [Question] = [Question]()
+    private var questions : [Question] = [Question]()
     private var currentQuestionIndex = 0
     private var isLast = false
     
@@ -30,6 +30,22 @@ class Quiz
         }
     }
 
+   
+    
+    var currentIndex : Int
+    {
+        get{
+          return currentQuestionIndex
+        }
+    }
+
+    var questionCount : Int
+        {
+        get{
+            return questions.count
+        }
+    }
+    
     func prevQuestion()
     {
         if(currentQuestionIndex > 0)

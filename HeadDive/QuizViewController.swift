@@ -37,11 +37,18 @@ class QuizViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
         tableView.delegate = self
         tableView.dataSource = self
-        questionText.text = currentQuestion.question
-
+        questionText.text = currentQuestion.questionText
+        self.contentViewControler.title = getTitleText()
         // Do any additional setup after loading the view.
     }
 
+    func getTitleText() -> String
+    {
+        let index:String = String(stringInterpolationSegment: (self.quiz?.currentIndex)! + 1)
+        let count:String = String(stringInterpolationSegment: (self.quiz?.questionCount)! )
+        return  index+"/"+count
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return currentQuestion.getAnswerCount()
     }
@@ -67,7 +74,20 @@ class QuizViewController: UIViewController, UITableViewDelegate, UITableViewData
    
     @IBAction func nextButton(_ sender: AnyObject) {
         self.quiz?.nextQuestion()
+        updateNextPrev()
+    }
+    
+    func updateNextPrev()
+    {
+        questionText.text = currentQuestion.questionText
         self.tableView.reloadData()
+        self.contentViewControler.title = getTitleText()
+        
+    }
+    
+    @IBAction func prevButton(_ sender: AnyObject) {
+        self.quiz?.prevQuestion()
+        updateNextPrev()
     }
     
     var currentQuestion : Question {

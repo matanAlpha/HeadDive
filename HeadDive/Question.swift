@@ -10,7 +10,7 @@ import Foundation
 
 class Question
 {
-    var question : String?
+    private var question : String?
     private var answers: [String] = [String]()
     var correctAnswerIndex : Int?
     var correctAnswerText : String?
@@ -21,6 +21,11 @@ class Question
         self.answers  = answers
         self.correctAnswerIndex = correctAnswerIndex
         self.correctAnswerText = correctAnswerText
+    }
+    
+    var questionText : String?
+    {
+        return self.question
     }
     
     func getAnswerByIndex (index : Int) -> String
