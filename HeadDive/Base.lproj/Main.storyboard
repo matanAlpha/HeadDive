@@ -75,6 +75,9 @@
                                 <frame key="frameInset" minX="164" minY="538" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="middleButtonClicked:" destination="YGn-KA-VVf" eventType="touchUpInside" id="8gt-q6-CjI"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LP1-RL-fkA">
                                 <frame key="frameInset" minX="16" minY="538" width="46" height="30"/>
@@ -97,6 +100,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="Pjz-RF-8yf"/>
                     <connections>
+                        <outlet property="middleButton" destination="Oj1-Cx-xFU" id="eeG-5p-cbM"/>
+                        <outlet property="nextButton" destination="eP8-NJ-Sc1" id="P0V-dr-uVX"/>
+                        <outlet property="prevButton" destination="LP1-RL-fkA" id="wON-Xr-hXd"/>
                         <outlet property="questionText" destination="oJi-ms-T1V" id="TgA-EZ-x5Y"/>
                         <outlet property="tableView" destination="05A-J6-xif" id="K4g-i6-xvr"/>
                     </connections>

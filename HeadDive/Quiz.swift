@@ -11,8 +11,8 @@ import Foundation
 class Quiz
 {
     private var questions : [Question] = [Question]()
+    private var answersIndices : [Int?] = [Int?]()
     private var currentQuestionIndex = 0
-    private var isLast = false
     
     var currentQuesion : Question {
         return questions[currentQuestionIndex]
@@ -20,17 +20,22 @@ class Quiz
     
     func nextQuestion()
     {
-        if(!isLast)
+        if(!isLastQuestion)
         {
             currentQuestionIndex += 1
-            if((questions.count-1) == currentQuestionIndex)
-            {
-                isLast = true
-            }
         }
     }
 
-   
+    func setCurrentAnswerIndex( index : Int)
+    {
+        answersIndices[currentQuestionIndex] = index
+    }
+
+    func getCurrentAnswerIndex() -> Int?
+    {
+        return  answersIndices[currentQuestionIndex]
+    }
+
     
     var currentIndex : Int
     {
@@ -58,7 +63,7 @@ class Quiz
         
         get
         {
-            return isLast
+            return (questions.count-1) == currentQuestionIndex
         }
     }
     
@@ -82,6 +87,7 @@ class Quiz
             }
             let question = Question(quesion: questionText, answers: answers, correctAnswerIndex: 1, correctAnswerText: coorectAnswerText!)
             questions.append(question)
+            answersIndices.append(nil)
         }
     }
 }

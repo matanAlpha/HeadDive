@@ -15,7 +15,6 @@ class QuizViewController: UIViewController, UITableViewDelegate, UITableViewData
     let cellReuseIdentifier = "cell"
     let cellSpacingHeight: CGFloat = 5
     
-    var tappedAnswerIndex : IndexPath?
     var originalLayerSet  = false
     
     
@@ -25,12 +24,24 @@ class QuizViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     var borderColor: CGColor?
     
+    var bgColor: UIColor?
     
     var quiz : Quiz?
+    
+    var indexPaths : [IndexPath?]?//(count: 64, repeatedValue: nil)
     
     @IBOutlet weak var questionText: UILabel!
     
     @IBOutlet weak var tableView: UITableView!
+    
+    
+    @IBOutlet weak var prevButton: UIButton!
+    @IBOutlet weak var middleButton: UIButton!
+    
+    @IBOutlet weak var nextButton: UIButton!
+    
+    @IBAction func middleButtonClicked(_ sender: UIButton) {
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,13 +50,16 @@ class QuizViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.dataSource = self
         questionText.text = currentQuestion.questionText
         self.contentViewControler.title = getTitleText()
+        indexPaths =  [IndexPath?](repeating: nil, count: myQuiz.questionCount)
+//        prevButton.isHidden = true
+//        nextButton.isHidden = true
         // Do any additional setup after loading the view.
     }
 
     func getTitleText() -> String
     {
-        let index:String = String(stringInterpolationSegment: (self.quiz?.currentIndex)! + 1)
-        let count:String = String(stringInterpolationSegment: (self.quiz?.questionCount)! )
+        let index:String = String(stringInterpolationSegment: myQuiz.currentIndex + 1)
+        let count:String = String(stringInterpolationSegment: myQuiz.questionCount )
         return  index+"/"+count
     }
     
@@ -73,7 +87,7 @@ class QuizViewController: UIViewController, UITableViewDelegate, UITableViewData
     
    
     @IBAction func nextButton(_ sender: AnyObject) {
-        self.quiz?.nextQuestion()
+        myQuiz.nextQuestion()
         updateNextPrev()
     }
     
@@ -86,14 +100,21 @@ class QuizViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     @IBAction func prevButton(_ sender: AnyObject) {
-        self.quiz?.prevQuestion()
+        myQuiz.prevQuestion()
         updateNextPrev()
     }
     
     var currentQuestion : Question {
         get
         {
-             return (self.quiz?.currentQuesion)!
+             return myQuiz.currentQuesion
+        }
+    }
+    
+    var myQuiz : Quiz {
+        get
+        {
+            return (self.quiz)!
         }
     }
     
@@ -106,12 +127,24 @@ class QuizViewController: UIViewController, UITableViewDelegate, UITableViewData
             // add border and color
             cell.backgroundColor = UIColor.white
         
+        
             if(!originalLayerSet)
             {
                 cornerRadius = cell.layer.cornerRadius
                 borderWidth = cell.layer.borderWidth
                 borderColor = cell.layer.borderColor
+                bgColor = cell.backgroundColor
                 originalLayerSet = true
+            }else
+            {
+                restoreCell(cell:  cell)
+            }
+            if let answerIndex = myQuiz.getCurrentAnswerIndex()
+            {
+                if ( answerIndex == indexPath.section)
+                {
+                    highlightCell(cell: cell)
+                }
             }
         
         return cell
@@ -124,6 +157,7 @@ class QuizViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.layer.borderColor = borderColor
             cell.layer.borderWidth = borderWidth!
             cell.layer.cornerRadius = cornerRadius!
+            cell.backgroundColor = bgColor
         }
         cell.clipsToBounds = false
     }
@@ -134,6 +168,7 @@ class QuizViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.layer.borderColor = UIColor.black.cgColor
         cell.layer.borderWidth = 1
         cell.layer.cornerRadius = 8
+        cell.backgroundColor = UIColor.gray
         cell.clipsToBounds = true
     }
     
@@ -141,7 +176,7 @@ class QuizViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // note that indexPath.section is used rather than indexPath.row
 
-        if let tappedIndex = tappedAnswerIndex {
+        if let tappedIndex = indexPaths![myQuiz.currentIndex] {
             let cell:UITableViewCell = tableView.cellForRow(at: tappedIndex) as UITableViewCell!
             restoreCell(cell: cell)
         }
@@ -149,7 +184,8 @@ class QuizViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell:UITableViewCell = tableView.cellForRow(at: indexPath) as UITableViewCell!
         highlightCell(cell: cell)
 
-        tappedAnswerIndex = indexPath
+        indexPaths![myQuiz.currentIndex] = indexPath
+        myQuiz.setCurrentAnswerIndex(index: indexPath.section)
         print("You tapped cell number \(indexPath.section).")
     }
     
