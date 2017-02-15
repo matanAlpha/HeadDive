@@ -41,6 +41,17 @@ class QuizViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var nextButton: UIButton!
     
     @IBAction func middleButtonClicked(_ sender: UIButton) {
+
+        if(myQuiz.isFirstQuestion)
+        {
+            myQuiz.nextQuestion()
+            updateNextPrev()
+        }else
+        {
+            myQuiz.prevQuestion()
+            updateNextPrev()
+        }
+
     }
     
     override func viewDidLoad() {
@@ -51,8 +62,8 @@ class QuizViewController: UIViewController, UITableViewDelegate, UITableViewData
         questionText.text = currentQuestion.questionText
         self.contentViewControler.title = getTitleText()
         indexPaths =  [IndexPath?](repeating: nil, count: myQuiz.questionCount)
-//        prevButton.isHidden = true
-//        nextButton.isHidden = true
+        prevButton.isHidden = true
+        nextButton.isHidden = true
         // Do any additional setup after loading the view.
     }
 
@@ -93,6 +104,27 @@ class QuizViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func updateNextPrev()
     {
+        if (!myQuiz.isLastQuestion && !myQuiz.isFirstQuestion)
+        {
+            nextButton.isHidden = false
+            prevButton.isHidden = false
+            middleButton.isHidden = true
+        }else
+        {
+            nextButton.isHidden = true
+            prevButton.isHidden = true
+            middleButton.isHidden = false
+            
+            if(myQuiz.isFirstQuestion)
+            {
+                middleButton.setTitle("Next", for: .normal)
+            }else{
+                middleButton.setTitle("Prev", for: .normal)
+            }
+            
+            
+        }
+        
         questionText.text = currentQuestion.questionText
         self.tableView.reloadData()
         self.contentViewControler.title = getTitleText()
