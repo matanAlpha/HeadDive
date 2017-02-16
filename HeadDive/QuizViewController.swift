@@ -11,6 +11,11 @@ import UIKit
 class QuizViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
  
+    private struct StoryBorad
+    {
+        static let ShowDoneQuiz = "showDoneQuiz"
+    }
+    
     
     let cellReuseIdentifier = "cell"
     let cellSpacingHeight: CGFloat = 5
@@ -98,13 +103,21 @@ class QuizViewController: UIViewController, UITableViewDelegate, UITableViewData
     
    
     @IBAction func nextButton(_ sender: AnyObject) {
-        myQuiz.nextQuestion()
-        updateNextPrev()
+        
+        if (myQuiz.isLastQuestion)
+        {
+            performSegue(withIdentifier: StoryBorad.ShowDoneQuiz, sender: sender)
+
+        }else
+        {
+            myQuiz.nextQuestion()
+            updateNextPrev()
+        }
     }
     
     func updateNextPrev()
     {
-        if (!myQuiz.isLastQuestion && !myQuiz.isFirstQuestion)
+        if (!myQuiz.isFirstQuestion)
         {
             nextButton.isHidden = false
             prevButton.isHidden = false
@@ -115,13 +128,7 @@ class QuizViewController: UIViewController, UITableViewDelegate, UITableViewData
             prevButton.isHidden = true
             middleButton.isHidden = false
             
-            if(myQuiz.isFirstQuestion)
-            {
-                middleButton.setTitle("Next", for: .normal)
-            }else{
-                middleButton.setTitle("Prev", for: .normal)
-            }
-            
+            middleButton.setTitle("Next", for: .normal)
             
         }
         
@@ -233,13 +240,14 @@ class QuizViewController: UIViewController, UITableViewDelegate, UITableViewData
     */
 
 
+    
+    
 }
 
 extension UIViewController
 {
     var contentViewControler: UIViewController {
         if let navCon = self as? UINavigationController {
-          
             return navCon.visibleViewController ?? self
         } else {
             return self
