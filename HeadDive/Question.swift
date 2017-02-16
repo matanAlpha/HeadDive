@@ -38,4 +38,11 @@ class Question
         return answers.count
     }
 
+    func isCorrectAnswer (answerIndex : Int) -> Bool {
+        var ret = false;
+        if let correctAnswer = correctAnswerIndex {
+            ret = (correctAnswer == answerIndex)
+        }
+        return ret
+    }
 }

@@ -74,9 +74,25 @@ class Quiz
         }
     }
     
+    func getNumberOfCorrectAnswers() -> Int
+    {
+        var ret = 0
+        for qustionIndex in 0...questions.count-1
+        {
+            if let asnwerIndex = answersIndices[qustionIndex] {
+                if (questions[qustionIndex].isCorrectAnswer(answerIndex: asnwerIndex))
+                {
+                    ret += 1
+                }
+            }
+        }
+        
+        return ret
+    }
+    
     func createDemoQuiz ()
     {
-        for questionsIndex in 0...5 {
+        for questionsIndex in 0...1 {
             let questionText = "The question is \(questionsIndex)"
             var answers: [String] = [String]()
             var coorectAnswerText : String?

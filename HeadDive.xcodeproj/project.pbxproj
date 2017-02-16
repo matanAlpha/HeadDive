@@ -17,6 +17,7 @@
 		84225CD71E50188C0078EC45 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84225CD61E50188C0078EC45 /* Question.swift */; };
 		84225CDA1E501A900078EC45 /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84225CD91E501A900078EC45 /* Quiz.swift */; };
 		84225CDC1E5555C90078EC45 /* DoneQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84225CDB1E5555C90078EC45 /* DoneQuizViewController.swift */; };
+		84225CDE1E555E8B0078EC45 /* QuizSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84225CDD1E555E8B0078EC45 /* QuizSummaryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		84225CD61E50188C0078EC45 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		84225CD91E501A900078EC45 /* Quiz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
 		84225CDB1E5555C90078EC45 /* DoneQuizViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoneQuizViewController.swift; sourceTree = "<group>"; };
+		84225CDD1E555E8B0078EC45 /* QuizSummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizSummaryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				84225CD11E4AC7C90078EC45 /* SupportingFiles */,
 				84225CC11E4AC78C0078EC45 /* ViewController.swift */,
 				84225CDB1E5555C90078EC45 /* DoneQuizViewController.swift */,
+				84225CDD1E555E8B0078EC45 /* QuizSummaryViewController.swift */,
 				84225CC31E4AC78C0078EC45 /* Main.storyboard */,
 				84225CD21E4AD7CC0078EC45 /* QuizViewController.swift */,
 				84225CD41E5013EA0078EC45 /* PracticeViewController.swift */,
@@ -167,6 +170,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84225CDE1E555E8B0078EC45 /* QuizSummaryViewController.swift in Sources */,
 				84225CDC1E5555C90078EC45 /* DoneQuizViewController.swift in Sources */,
 				84225CD71E50188C0078EC45 /* Question.swift in Sources */,
 				84225CD31E4AD7CC0078EC45 /* QuizViewController.swift in Sources */,

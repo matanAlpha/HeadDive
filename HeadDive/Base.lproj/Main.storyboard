@@ -112,10 +112,10 @@
             </objects>
             <point key="canvasLocation" x="3062" y="-204"/>
         </scene>
-        <!--Done Quiz View Controller-->
+        <!--End test confirmation-->
         <scene sceneID="mJc-ex-fzn">
             <objects>
-                <viewController id="MVP-Fg-c5v" customClass="DoneQuizViewController" customModule="HeadDive" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="End test confirmation" id="MVP-Fg-c5v" customClass="DoneQuizViewController" customModule="HeadDive" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6sJ-zD-YEr"/>
                         <viewControllerLayoutGuide type="bottom" id="ltb-nI-Ohl"/>
@@ -150,10 +150,66 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <segue destination="ZAd-9l-auA" kind="show" identifier="showQuizSummary" id="jcT-LP-q3N"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mNK-dm-oEO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3850" y="-205"/>
+        </scene>
+        <!--Test summary-->
+        <scene sceneID="wgM-9B-2kQ">
+            <objects>
+                <viewController title="Test summary" id="ZAd-9l-auA" customClass="QuizSummaryViewController" customModule="HeadDive" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WYg-r2-cTD"/>
+                        <viewControllerLayoutGuide type="bottom" id="RAD-UM-uxx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3zV-lf-kQc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rgG-8D-eeN">
+                                <frame key="frameInset" minX="168" minY="427" width="39" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Close"/>
+                                <connections>
+                                    <action selector="close:" destination="ZAd-9l-auA" eventType="touchUpInside" id="pDm-0z-ThJ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You have finish the test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lDf-IB-bjI">
+                                <frame key="frameInset" minX="98" minY="110" width="178" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ieI-n5-Q2j">
+                                <frame key="frameInset" minX="230" minY="251" width="108" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uIU-7y-7Gu">
+                                <frame key="frameInset" minX="63" minY="251" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="numberOfCorrectAnswers" destination="ieI-n5-Q2j" id="rVc-hw-rgk"/>
+                        <outlet property="numberOfQuestions" destination="uIU-7y-7Gu" id="suJ-mJ-WTa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ceG-AQ-1EL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4573.6000000000004" y="-205.54722638680661"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="85i-t2-bnY">

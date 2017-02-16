@@ -101,7 +101,15 @@ class QuizViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     
-   
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == StoryBorad.ShowDoneQuiz {
+            if let ivc = segue.destination.contentViewControler as? DoneQuizViewController {
+                ivc.quiz = self.quiz
+            }
+        }
+    }
+    
+    
     @IBAction func nextButton(_ sender: AnyObject) {
         
         if (myQuiz.isLastQuestion)

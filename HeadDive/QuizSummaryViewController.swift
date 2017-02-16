@@ -8,43 +8,46 @@
 
 import UIKit
 
-class DoneQuizViewController: UIViewController {
+class QuizSummaryViewController: UIViewController {
 
     
     private struct StoryBorad
     {
-        static let ShowQuizSummary = "showQuizSummary"
+        static let ShowQuizSegue = "showQuiz"
+        static let ShowPracticeSegue = "showPractice"
         
     }
+
+    @IBOutlet weak var numberOfQuestions: UILabel!
+    @IBOutlet weak var numberOfCorrectAnswers: UILabel!
     
     var quiz : Quiz?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-
-        
-        
+        self.numberOfCorrectAnswers.text = "\(quiz?.getNumberOfCorrectAnswers() ?? 0)"
+        self.numberOfQuestions.text = "\(quiz?.questionCount ?? 0)"
         
     }
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == StoryBorad.ShowQuizSummary {
-            if let ivc = segue.destination.contentViewControler as? QuizSummaryViewController {
-                ivc.quiz = self.quiz
-            }
-        }
-    }
     
     
-    @IBAction func doneQuiz(_ sender: UIButton) {
-        performSegue(withIdentifier: StoryBorad.ShowQuizSummary, sender: sender)
+    @IBAction func close(_ sender: UIButton) {
+        var navArray:Array = (self.navigationController?.viewControllers)!
+        self.navigationController?.popToViewController(navArray[0], animated: true)
 
     }
-    @IBAction func backToQuiz(_ sender: UIButton) {
-        self.navigationController?.popViewController(animated: true)
-    }
-//   
+    
+//    @IBAction func doneQuiz(_ sender: UIButton) {
+//        var navArray:Array = (self.navigationController?.viewControllers)!
+//        self.navigationController?.popToViewController(navArray[0], animated: true)
+//        
+//    }
+//    @IBAction func backToQuiz(_ sender: UIButton) {
+//        self.navigationController?.popViewController(animated: true)
+//    }
+//
 //    @IBAction func showQuiz(_ sender: UIButton) {
 //        performSegue(withIdentifier: StoryBorad.ShowQuizSegue, sender: sender)
 //
