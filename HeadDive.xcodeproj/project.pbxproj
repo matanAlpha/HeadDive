@@ -68,14 +68,11 @@
 		84225CBE1E4AC78C0078EC45 /* HeadDive */ = {
 			isa = PBXGroup;
 			children = (
+				84371F8E1E597FDF003CA380 /* Quiz controlers */,
 				84225CD81E501A580078EC45 /* Quiz model */,
 				84225CD11E4AC7C90078EC45 /* SupportingFiles */,
 				84225CC11E4AC78C0078EC45 /* ViewController.swift */,
-				84225CDF1E594E700078EC45 /* EnterQuizViewController.swift */,
-				84225CDB1E5555C90078EC45 /* DoneQuizViewController.swift */,
-				84225CDD1E555E8B0078EC45 /* QuizSummaryViewController.swift */,
 				84225CC31E4AC78C0078EC45 /* Main.storyboard */,
-				84225CD21E4AD7CC0078EC45 /* QuizViewController.swift */,
 				84225CD41E5013EA0078EC45 /* PracticeViewController.swift */,
 			);
 			path = HeadDive;
@@ -99,6 +96,17 @@
 				84225CD91E501A900078EC45 /* Quiz.swift */,
 			);
 			name = "Quiz model";
+			sourceTree = "<group>";
+		};
+		84371F8E1E597FDF003CA380 /* Quiz controlers */ = {
+			isa = PBXGroup;
+			children = (
+				84225CDF1E594E700078EC45 /* EnterQuizViewController.swift */,
+				84225CDB1E5555C90078EC45 /* DoneQuizViewController.swift */,
+				84225CDD1E555E8B0078EC45 /* QuizSummaryViewController.swift */,
+				84225CD21E4AD7CC0078EC45 /* QuizViewController.swift */,
+			);
+			name = "Quiz controlers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,6 +351,7 @@
 				84225CD01E4AC78C0078EC45 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
