@@ -14,6 +14,8 @@ class Quiz
     private var answersIndices : [Int?] = [Int?]()
     private var currentQuestionIndex = 0
     
+    private var examineeCode : String?
+    
     var currentQuesion : Question {
         return questions[currentQuestionIndex]
     }
@@ -90,6 +92,17 @@ class Quiz
         return ret
     }
     
+    func checkExamineeCode(enteredCode : String) -> Bool
+    {
+        var ret = false
+        
+            if (enteredCode == examineeCode!)
+            {
+                ret = true
+            }
+        return ret
+    }
+    
     func createDemoQuiz ()
     {
         for questionsIndex in 0...1 {
@@ -105,5 +118,6 @@ class Quiz
             questions.append(question)
             answersIndices.append(nil)
         }
+        examineeCode = "abc"
     }
 }

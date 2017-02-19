@@ -26,9 +26,22 @@ class EnterQuizViewController: UIViewController {
         
     }
 
+    @IBOutlet weak var enteredCodeText: UITextField!
+    
     
     @IBAction func startQuiz(_ sender: UIButton) {
-        performSegue(withIdentifier: StoryBorad.ShowQuizSegue, sender: sender)
+        
+        if let enteredExamineeCode = enteredCodeText.text {
+            if(quiz!.checkExamineeCode(enteredCode: enteredExamineeCode))
+            {
+                performSegue(withIdentifier: StoryBorad.ShowQuizSegue, sender: sender)
+            }
+        }else
+        {
+            
+        }
+        
+
     }
    
 
