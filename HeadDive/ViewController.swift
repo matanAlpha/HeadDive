@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     
     private struct StoryBorad
     {
-        static let ShowQuizSegue = "showQuiz"
+        static let EnterQuizSegue = "enterQuiz"
         static let ShowPracticeSegue = "showPractice"
         
     }
@@ -30,7 +30,7 @@ class ViewController: UIViewController {
         
    
     @IBAction func showQuiz(_ sender: UIButton) {
-        performSegue(withIdentifier: StoryBorad.ShowQuizSegue, sender: sender)
+        performSegue(withIdentifier: StoryBorad.EnterQuizSegue, sender: sender)
 
     }
 
@@ -40,8 +40,8 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == StoryBorad.ShowQuizSegue {
-            if let ivc = segue.destination.contentViewControler as? QuizViewController {
+        if segue.identifier == StoryBorad.EnterQuizSegue {
+            if let ivc = segue.destination.contentViewControler as? EnterQuizViewController {
                 let q = Quiz()
                 q.createDemoQuiz()
                 ivc.quiz = q

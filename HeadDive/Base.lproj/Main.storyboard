@@ -39,13 +39,44 @@
                     </view>
                     <navigationItem key="navigationItem" id="kRn-Il-LI5"/>
                     <connections>
-                        <segue destination="YGn-KA-VVf" kind="show" identifier="showQuiz" id="sTn-mB-x7T"/>
                         <segue destination="eil-Rz-7mv" kind="show" identifier="showPractice" id="B0z-58-ult"/>
+                        <segue destination="ybs-nx-naF" kind="show" identifier="enterQuiz" id="M65-Ia-abg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1996" y="122.78860569715144"/>
+        </scene>
+        <!--Quiz-->
+        <scene sceneID="gn8-oV-IzP">
+            <objects>
+                <viewController title="Quiz" id="ybs-nx-naF" customClass="EnterQuizViewController" customModule="HeadDive" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pDY-kJ-6rh"/>
+                        <viewControllerLayoutGuide type="bottom" id="a0r-QV-iRf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8Y9-Rx-gDY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SXr-vT-4bd">
+                                <frame key="frameInset" minX="170" minY="287" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="startQuiz:" destination="ybs-nx-naF" eventType="touchUpInside" id="XQb-vm-Qeg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="YGn-KA-VVf" kind="show" identifier="showQuiz" id="WQB-B1-bZx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eU6-ek-z5c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2775" y="-14"/>
         </scene>
         <!--Quiz View Controller-->
         <scene sceneID="z26-wS-mgy">
@@ -110,7 +141,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yZx-iA-cc7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3062" y="-204"/>
+            <point key="canvasLocation" x="3774" y="-345"/>
         </scene>
         <!--End test confirmation-->
         <scene sceneID="mJc-ex-fzn">
@@ -156,7 +187,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mNK-dm-oEO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3850" y="-205"/>
+            <point key="canvasLocation" x="4617" y="-238"/>
         </scene>
         <!--Test summary-->
         <scene sceneID="wgM-9B-2kQ">
@@ -209,7 +240,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ceG-AQ-1EL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4573.6000000000004" y="-205.54722638680661"/>
+            <point key="canvasLocation" x="5342" y="-238"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="85i-t2-bnY">
@@ -271,7 +302,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YXi-ka-Jep" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3009" y="473"/>
+            <point key="canvasLocation" x="2847" y="661"/>
         </scene>
     </scenes>
 </document>
