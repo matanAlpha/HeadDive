@@ -20,12 +20,13 @@ class EnterQuizViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-
+        wrongCodeText.isHidden = true
         
         
         
     }
 
+    @IBOutlet weak var wrongCodeText: UILabel!
     @IBOutlet weak var enteredCodeText: UITextField!
     
     
@@ -35,12 +36,16 @@ class EnterQuizViewController: UIViewController {
             if(quiz!.checkExamineeCode(enteredCode: enteredExamineeCode))
             {
                 performSegue(withIdentifier: StoryBorad.ShowQuizSegue, sender: sender)
+                wrongCodeText.isHidden = true
+
+            }else {
+                wrongCodeText.isHidden = false
             }
         }else
         {
-            
+            wrongCodeText.isHidden = false
         }
-        
+    
 
     }
    
