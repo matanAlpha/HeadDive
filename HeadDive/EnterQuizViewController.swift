@@ -26,6 +26,10 @@ class EnterQuizViewController: UIViewController {
         
     }
 
+    @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
+        enteredCodeText.resignFirstResponder()
+    }
+    
     @IBOutlet weak var wrongCodeText: UILabel!
     @IBOutlet weak var enteredCodeText: UITextField!
     

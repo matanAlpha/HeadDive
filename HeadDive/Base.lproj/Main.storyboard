@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -74,44 +75,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SXr-vT-4bd">
-                                <rect key="frame" x="170" y="210" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SXr-vT-4bd">
+                                <rect key="frame" x="190" y="200" width="34" height="30"/>
                                 <state key="normal" title="Start"/>
                                 <connections>
                                     <action selector="startQuiz:" destination="ybs-nx-naF" eventType="touchUpInside" id="XQb-vm-Qeg"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="abc" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1AG-XE-TMl">
-                                <rect key="frame" x="139" y="142" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="abc" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1AG-XE-TMl">
+                                <rect key="frame" x="184.66666666666666" y="133" width="45" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="examinee code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xNB-l2-VTY">
-                                <rect key="frame" x="129" y="100" width="116" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Examinee code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xNB-l2-VTY">
+                                <rect key="frame" x="148.66666666666669" y="104" width="117.00000000000006" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You should get your examinee code from your instructor" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ta-jI-3Ax">
-                                <rect key="frame" x="24" y="259" width="327" height="61"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wrong code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cG7-Rs-54P">
-                                <rect key="frame" x="140" y="181" width="94" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wrong code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cG7-Rs-54P">
+                                <rect key="frame" x="160" y="171" width="94" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You should get your examinee code from your instructor" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ta-jI-3Ax">
+                                <rect key="frame" x="20" y="238" width="374" height="20.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4ta-jI-3Ax" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8Y9-Rx-gDY" secondAttribute="leadingMargin" id="3lG-gc-zqr"/>
+                            <constraint firstItem="SXr-vT-4bd" firstAttribute="top" secondItem="cG7-Rs-54P" secondAttribute="bottom" constant="8" id="Cs5-Ao-knI"/>
+                            <constraint firstItem="4ta-jI-3Ax" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="8Y9-Rx-gDY" secondAttribute="trailingMargin" id="GVY-Js-MFx"/>
+                            <constraint firstItem="cG7-Rs-54P" firstAttribute="top" secondItem="1AG-XE-TMl" secondAttribute="bottom" constant="8" id="Haa-cN-fRG"/>
+                            <constraint firstItem="SXr-vT-4bd" firstAttribute="centerX" secondItem="8Y9-Rx-gDY" secondAttribute="centerX" id="U6S-Zz-9ee"/>
+                            <constraint firstItem="xNB-l2-VTY" firstAttribute="centerX" secondItem="8Y9-Rx-gDY" secondAttribute="centerX" id="UoR-mE-FtN"/>
+                            <constraint firstItem="1AG-XE-TMl" firstAttribute="top" secondItem="xNB-l2-VTY" secondAttribute="bottom" constant="8" id="XtI-ha-3gW"/>
+                            <constraint firstItem="1AG-XE-TMl" firstAttribute="centerX" secondItem="8Y9-Rx-gDY" secondAttribute="centerX" id="ZVh-FG-bSQ"/>
+                            <constraint firstItem="4ta-jI-3Ax" firstAttribute="centerX" secondItem="8Y9-Rx-gDY" secondAttribute="centerX" id="aQ5-i7-eHJ"/>
+                            <constraint firstItem="xNB-l2-VTY" firstAttribute="top" secondItem="pDY-kJ-6rh" secondAttribute="bottom" constant="40" id="gvT-6h-fz3"/>
+                            <constraint firstItem="cG7-Rs-54P" firstAttribute="centerX" secondItem="8Y9-Rx-gDY" secondAttribute="centerX" id="nbj-Vo-os5"/>
+                            <constraint firstItem="4ta-jI-3Ax" firstAttribute="top" secondItem="SXr-vT-4bd" secondAttribute="bottom" constant="8" id="wzq-GF-EOa"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="enteredCodeText" destination="1AG-XE-TMl" id="sR3-pA-PoJ"/>
@@ -120,8 +130,13 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eU6-ek-z5c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="RcV-KC-qDM">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="ybs-nx-naF" id="GaO-kv-aOj"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2773.5999999999999" y="-14.842578710644679"/>
+            <point key="canvasLocation" x="2772.4637681159425" y="-15.489130434782609"/>
         </scene>
         <!--Quiz View Controller-->
         <scene sceneID="z26-wS-mgy">
