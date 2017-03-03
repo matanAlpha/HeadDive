@@ -22,35 +22,59 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scuba diving tivia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JE5-vm-ngf">
-                                <rect key="frame" x="109" y="164" width="196" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="my9-aM-sQZ">
-                                <rect key="frame" x="155.66666666666669" y="244" width="103.00000000000006" height="30"/>
-                                <state key="normal" title="Got to practice"/>
-                                <connections>
-                                    <action selector="showPractice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Hh-QA-4Nt"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GVD-bn-r5f">
-                                <rect key="frame" x="173" y="279" width="68" height="30"/>
-                                <state key="normal" title="Go to test"/>
-                                <connections>
-                                    <action selector="showQuiz:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MIe-K6-zQL"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="1Gz-bl-s9B">
+                                <rect key="frame" x="109" y="72" width="225" height="370"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Cqe-50-8oY">
+                                        <rect key="frame" x="0.0" y="0.0" width="225" height="263"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="טריוויה צלילה" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JE5-vm-ngf">
+                                                <rect key="frame" x="47.666666666666657" y="0.0" width="130.00000000000003" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Scuba" translatesAutoresizingMaskIntoConstraints="NO" id="asZ-b8-0Sz">
+                                                <rect key="frame" x="0.0" y="38" width="225" height="225"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="A21-2U-MG2">
+                                        <rect key="frame" x="52.666666666666657" y="288" width="120.00000000000003" height="82"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="my9-aM-sQZ">
+                                                <rect key="frame" x="41" y="0.0" width="38" height="30"/>
+                                                <state key="normal" title="תירגול"/>
+                                                <connections>
+                                                    <action selector="showPractice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Hh-QA-4Nt"/>
+                                                </connections>
+                                            </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bFe-5K-TZe">
+                                                <rect key="frame" x="0.0" y="38" width="120.00000000000003" height="6"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="120" id="B1R-id-Mve"/>
+                                                    <constraint firstAttribute="width" constant="120" id="XPp-bR-Whs"/>
+                                                    <constraint firstAttribute="height" constant="6" id="ZBN-Qq-RH6"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="o9u-tw-nx9"/>
+                                                </constraints>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GVD-bn-r5f">
+                                                <rect key="frame" x="45" y="52" width="30" height="30"/>
+                                                <state key="normal" title="מבחן"/>
+                                                <connections>
+                                                    <action selector="showQuiz:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MIe-K6-zQL"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="GVD-bn-r5f" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3he-ES-fHo"/>
-                            <constraint firstItem="my9-aM-sQZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AGw-IR-BRx"/>
-                            <constraint firstItem="my9-aM-sQZ" firstAttribute="top" secondItem="JE5-vm-ngf" secondAttribute="bottom" constant="50" id="ce0-c7-CG0"/>
-                            <constraint firstItem="JE5-vm-ngf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dim-oC-aSh"/>
-                            <constraint firstItem="JE5-vm-ngf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="eoU-6W-Dq1"/>
-                            <constraint firstItem="GVD-bn-r5f" firstAttribute="top" secondItem="my9-aM-sQZ" secondAttribute="bottom" constant="5" id="uu4-KD-qLS"/>
+                            <constraint firstItem="1Gz-bl-s9B" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="14.5" id="pej-08-UMe"/>
+                            <constraint firstItem="1Gz-bl-s9B" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="rOF-Mb-Dqf"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="kRn-Il-LI5"/>
@@ -413,4 +437,7 @@
             <point key="canvasLocation" x="2847" y="661"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Scuba" width="225" height="225"/>
+    </resources>
 </document>
