@@ -106,13 +106,13 @@ class Quiz
     func createDemoQuiz ()
     {
         for questionsIndex in 0...1 {
-            let questionText = "The question is \(questionsIndex)"
+            let questionText = " השאלה היא: \(questionsIndex)"
             var answers: [String] = [String]()
             var coorectAnswerText : String?
             for answerIndex in 0...3 {
-                let answerText = "Answer is \(questionsIndex) and \(answerIndex)"
+                let answerText = "התשובה היא: \(questionsIndex) ו \(answerIndex) "
                 answers.append(answerText)
-                coorectAnswerText = "Coorect is \(questionsIndex) and \(answerIndex)"
+                coorectAnswerText = "התשובה הנכונה היא: \(questionsIndex) ו \(answerIndex) "
             }
             let question = Question(quesion: questionText, answers: answers, correctAnswerIndex: 1, correctAnswerText: coorectAnswerText!)
             questions.append(question)
