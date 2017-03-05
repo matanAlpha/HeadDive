@@ -16,6 +16,13 @@ class PracticeViewController: UIViewController, UITableViewDelegate, UITableView
         static let ShowDoneQuiz = "showDoneQuiz"
     }
     
+    enum QuestionState {
+        case Check
+        case Next
+        case Explain
+    }
+    
+    var questionState = QuestionState.Check
     
     let cellReuseIdentifier = "cell"
     let cellSpacingHeight: CGFloat = 5
@@ -49,16 +56,26 @@ class PracticeViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var tableViewHeightConstraint: NSLayoutConstraint!
     @IBAction func middleButtonClicked(_ sender: UIButton) {
 
-        if(myQuiz.isFirstQuestion)
-        {
+        switch questionState {
+        case .Check:
+            if(currentQuestion.isCorrectAnswer(answerIndex: quiz?.getCurrentAnswerIndex() ?? -1 ))
+            {
+                middleButton.setTitle("הבא", for: .normal)
+            }else
+            {
+                questionState = QuestionState.Explain
+                middleButton.setTitle("הסבר", for: .normal)
+            }
+        case .Explain:
+            questionState = QuestionState.Next
+            middleButton.setTitle("הבא", for: .normal)
+        case .Next:
             myQuiz.nextQuestion()
             updateNextPrev()
-        }else
-        {
-            myQuiz.prevQuestion()
-            updateNextPrev()
+            questionState = QuestionState.Check
+            middleButton.setTitle("בדוק", for: .normal)
         }
-
+  
     }
     
     override func updateViewConstraints() {
@@ -139,12 +156,12 @@ class PracticeViewController: UIViewController, UITableViewDelegate, UITableView
         {
             nextButton.isHidden = false
             prevButton.isHidden = false
-            middleButton.isHidden = true
+            //middleButton.isHidden = true
         }else
         {
             nextButton.isHidden = true
             prevButton.isHidden = true
-            middleButton.isHidden = false
+            //middleButton.isHidden = false
             
             middleButton.setTitle("הבא", for: .normal)
             
@@ -153,6 +170,9 @@ class PracticeViewController: UIViewController, UITableViewDelegate, UITableView
         questionText.text = currentQuestion.questionText
         self.tableView.reloadData()
         self.contentViewControler.title = getTitleText()
+        
+        questionState = QuestionState.Check
+
            
     }
     
