@@ -16,7 +16,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="1Gz-bl-s9B">
@@ -84,7 +84,7 @@
                         <viewControllerLayoutGuide type="bottom" id="a0r-QV-iRf"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8Y9-Rx-gDY">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Pnb-Aj-7zs">
@@ -152,7 +152,7 @@
                         <viewControllerLayoutGuide type="bottom" id="dOk-5l-P5K"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="FJb-nF-ULp">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How deep a diver with one star can go?" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oJi-ms-T1V">
@@ -165,35 +165,36 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LP1-RL-fkA">
-                                <frame key="frameInset" minX="54" minY="497" width="38" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="הקודם"/>
-                                <connections>
-                                    <action selector="prevButton:" destination="YGn-KA-VVf" eventType="touchUpInside" id="jES-ms-8gK"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oj1-Cx-xFU">
-                                <frame key="frameInset" minX="172" minY="497" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="הבא"/>
-                                <connections>
-                                    <action selector="middleButtonClicked:" destination="YGn-KA-VVf" eventType="touchUpInside" id="8gt-q6-CjI"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eP8-NJ-Sc1">
-                                <frame key="frameInset" minX="277" minY="497" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="הבא"/>
-                                <connections>
-                                    <action selector="nextButton:" destination="YGn-KA-VVf" eventType="touchUpInside" id="tT6-Fw-jWg"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="U69-mk-ZBW">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LP1-RL-fkA">
+                                        <state key="normal" title="הקודם"/>
+                                        <connections>
+                                            <action selector="prevButton:" destination="YGn-KA-VVf" eventType="touchUpInside" id="jES-ms-8gK"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oj1-Cx-xFU">
+                                        <state key="normal" title="הבא"/>
+                                        <connections>
+                                            <action selector="middleButtonClicked:" destination="YGn-KA-VVf" eventType="touchUpInside" id="8gt-q6-CjI"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eP8-NJ-Sc1">
+                                        <state key="normal" title="הבא"/>
+                                        <connections>
+                                            <action selector="nextButton:" destination="YGn-KA-VVf" eventType="touchUpInside" id="tT6-Fw-jWg"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="oJi-ms-T1V" firstAttribute="centerX" secondItem="FJb-nF-ULp" secondAttribute="centerX" id="1PK-uQ-qyo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="U69-mk-ZBW" secondAttribute="trailing" id="3Zm-AV-YQg"/>
+                            <constraint firstItem="dOk-5l-P5K" firstAttribute="top" secondItem="U69-mk-ZBW" secondAttribute="bottom" constant="20" id="HGm-pk-LM7"/>
                             <constraint firstItem="oJi-ms-T1V" firstAttribute="top" secondItem="0uy-PC-ffs" secondAttribute="bottom" constant="8" id="Xk9-Zr-pwP"/>
+                            <constraint firstItem="U69-mk-ZBW" firstAttribute="leading" secondItem="FJb-nF-ULp" secondAttribute="leadingMargin" id="sdt-Rb-UNC"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Pjz-RF-8yf"/>
@@ -219,7 +220,7 @@
                         <viewControllerLayoutGuide type="bottom" id="ltb-nI-Ohl"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Y0D-pS-cNy">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="47O-pO-9ep">
@@ -289,7 +290,7 @@
                         <viewControllerLayoutGuide type="bottom" id="RAD-UM-uxx"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="3zV-lf-kQc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="fdd-j1-OWU">
@@ -409,7 +410,7 @@
                         <viewControllerLayoutGuide type="bottom" id="QdH-dK-haV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="XCV-zt-hBO">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Young diver must dive with?" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oHM-Mn-4JX">
