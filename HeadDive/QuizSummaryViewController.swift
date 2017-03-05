@@ -28,7 +28,7 @@ class QuizSummaryViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         self.numberOfCorrectAnswers.text = "\(quiz?.getNumberOfCorrectAnswers() ?? 0)"
         self.numberOfQuestions.text = "\(quiz?.questionCount ?? 0)"
-        
+         self.navigationItem.hidesBackButton = true
     }
 
     
