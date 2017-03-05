@@ -39,42 +39,6 @@ class QuizSummaryViewController: UIViewController {
 
     }
     
-//    @IBAction func doneQuiz(_ sender: UIButton) {
-//        var navArray:Array = (self.navigationController?.viewControllers)!
-//        self.navigationController?.popToViewController(navArray[0], animated: true)
-//        
-//    }
-//    @IBAction func backToQuiz(_ sender: UIButton) {
-//        self.navigationController?.popViewController(animated: true)
-//    }
-//
-//    @IBAction func showQuiz(_ sender: UIButton) {
-//        performSegue(withIdentifier: StoryBorad.ShowQuizSegue, sender: sender)
-//
-//    }
-//
-//  
-//    @IBAction func showPractice(_ sender: UIButton) {
-//        performSegue(withIdentifier: StoryBorad.ShowPracticeSegue, sender: sender)
-//    }
-//    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == StoryBorad.ShowQuizSegue {
-//            if let ivc = segue.destination.contentViewControler as? QuizViewController {
-//                let q = Quiz()
-//                q.createDemoQuiz()
-//                ivc.quiz = q
-//                ivc.title = "Quiz"
-//            }
-//        } else if segue.identifier == StoryBorad.ShowPracticeSegue {
-//            if let ivc = segue.destination.contentViewControler as? PracticeViewController {
-//                let q = Quiz()
-//                q.createDemoQuiz()
-//                ivc.quiz = q
-//                ivc.title = "Practice"
-//            }
-//        }
-//    }
 
 }
 

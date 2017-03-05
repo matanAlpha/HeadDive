@@ -145,7 +145,7 @@ class QuizViewController: UIViewController, UITableViewDelegate, UITableViewData
             prevButton.isHidden = true
             middleButton.isHidden = false
             
-            middleButton.setTitle("Next", for: .normal)
+            middleButton.setTitle("הבא", for: .normal)
             
         }
         
@@ -245,16 +245,6 @@ class QuizViewController: UIViewController, UITableViewDelegate, UITableViewData
         print("You tapped cell number \(indexPath.section).")
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 
     
