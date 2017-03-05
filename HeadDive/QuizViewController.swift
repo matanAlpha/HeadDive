@@ -64,7 +64,7 @@ class QuizViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func updateViewConstraints() {
         super.updateViewConstraints()
         tableViewHeightConstraint?.constant = tableView.contentSize.height
-        
+       
     }
 
     
@@ -75,6 +75,7 @@ class QuizViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.dataSource = self
         questionText.text = currentQuestion.questionText
         self.contentViewControler.title = getTitleText()
+        
         indexPaths =  [IndexPath?](repeating: nil, count: myQuiz.questionCount)
         prevButton.isHidden = true
         nextButton.isHidden = true
@@ -152,7 +153,7 @@ class QuizViewController: UIViewController, UITableViewDelegate, UITableViewData
         questionText.text = currentQuestion.questionText
         self.tableView.reloadData()
         self.contentViewControler.title = getTitleText()
-        
+           
     }
     
     @IBAction func prevButton(_ sender: AnyObject) {
