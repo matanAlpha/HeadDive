@@ -79,8 +79,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="טריוויה צלילה" id="kRn-Il-LI5"/>
                     <connections>
-                        <segue destination="eil-Rz-7mv" kind="show" identifier="showPractice" id="B0z-58-ult"/>
                         <segue destination="ybs-nx-naF" kind="show" identifier="enterQuiz" id="M65-Ia-abg"/>
+                        <segue destination="ZO6-Eu-GjE" kind="show" identifier="showPractice" id="i0Q-DT-LPE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -465,7 +465,7 @@
         <!--Practice Quiz View Controller-->
         <scene sceneID="k5l-3V-ILq">
             <objects>
-                <viewController id="eil-Rz-7mv" userLabel="Practice Quiz View Controller" customClass="PracticeViewController" customModule="HeadDive" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="eil-Rz-7mv" userLabel="Practice Quiz View Controller" customClass="OldPracticeViewController" customModule="HeadDive" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xbx-cm-QFB"/>
                         <viewControllerLayoutGuide type="bottom" id="QdH-dK-haV"/>
@@ -504,7 +504,94 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YXi-ka-Jep" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2847" y="661"/>
+            <point key="canvasLocation" x="3852" y="333"/>
+        </scene>
+        <!--Practice View Controller-->
+        <scene sceneID="hkO-qr-7hS">
+            <objects>
+                <viewController id="ZO6-Eu-GjE" customClass="PracticeViewController" customModule="HeadDive" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MMI-rj-kHI"/>
+                        <viewControllerLayoutGuide type="bottom" id="c0v-tC-gEL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HRW-8p-JqP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="TOQ-Ud-Dwa">
+                                <rect key="frame" x="16" y="28" width="343" height="394"/>
+                                <subviews>
+                                    <stackView opaque="NO" tag="20" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="HP6-eE-beS">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="304"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How deep a diver with one star can go?" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ubY-5f-DOR">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="60"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vVa-fs-VlN">
+                                                <rect key="frame" x="0.0" y="80" width="343" height="224"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="224" identifier="tableViewHeightConstraint" id="O1Z-zP-l8M"/>
+                                                </constraints>
+                                            </tableView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="edj-RJ-Ea7">
+                                        <rect key="frame" x="0.0" y="364" width="343" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VDc-Zr-cds">
+                                                <rect key="frame" x="0.0" y="0.0" width="114.5" height="30"/>
+                                                <state key="normal" title="הקודם"/>
+                                                <connections>
+                                                    <action selector="prevButton:" destination="ZO6-Eu-GjE" eventType="touchUpInside" id="Ra6-tQ-Znb"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rvr-eB-3dp">
+                                                <rect key="frame" x="114.5" y="0.0" width="114" height="30"/>
+                                                <state key="normal" title="הבא"/>
+                                                <connections>
+                                                    <action selector="middleButtonClicked:" destination="ZO6-Eu-GjE" eventType="touchUpInside" id="hYe-Le-B6E"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jxf-8w-cxS">
+                                                <rect key="frame" x="228.5" y="0.0" width="114.5" height="30"/>
+                                                <state key="normal" title="הבא"/>
+                                                <connections>
+                                                    <action selector="nextButton:" destination="ZO6-Eu-GjE" eventType="touchUpInside" id="3PC-Lv-k5Y"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="ubY-5f-DOR" secondAttribute="trailing" id="axb-DD-qSJ"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="vVa-fs-VlN" secondAttribute="leading" id="01D-82-SiV"/>
+                            <constraint firstItem="ubY-5f-DOR" firstAttribute="leading" secondItem="HRW-8p-JqP" secondAttribute="leadingMargin" id="Ku5-S6-AF4"/>
+                            <constraint firstItem="TOQ-Ud-Dwa" firstAttribute="top" secondItem="MMI-rj-kHI" secondAttribute="bottom" constant="8" id="NVz-Gk-qHF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vVa-fs-VlN" secondAttribute="trailing" id="oxx-Pd-aoL"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="asf-11-Xcf"/>
+                    <connections>
+                        <outlet property="middleButton" destination="rvr-eB-3dp" id="82X-0H-8CA"/>
+                        <outlet property="nextButton" destination="jxf-8w-cxS" id="RRT-cl-ETq"/>
+                        <outlet property="prevButton" destination="VDc-Zr-cds" id="Qsn-5r-7MJ"/>
+                        <outlet property="questionText" destination="ubY-5f-DOR" id="uZ5-IJ-1fv"/>
+                        <outlet property="tableView" destination="vVa-fs-VlN" id="eDE-nh-r0n"/>
+                        <outlet property="tableViewHeightConstraint" destination="O1Z-zP-l8M" id="p8w-Ka-OAh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N3Q-Kx-wnN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3094" y="662"/>
         </scene>
     </scenes>
     <resources>
