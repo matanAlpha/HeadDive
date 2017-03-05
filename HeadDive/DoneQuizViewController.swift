@@ -42,7 +42,7 @@ class DoneQuizViewController: UIViewController {
 
     }
     @IBAction func backToQuiz(_ sender: UIButton) {
-        self.navigationController?.popViewController(animated: true)
+        _ = self.navigationController?.popViewController(animated: true)
     }
 //   
 //    @IBAction func showQuiz(_ sender: UIButton) {

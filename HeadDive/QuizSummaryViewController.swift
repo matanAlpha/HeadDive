@@ -35,7 +35,7 @@ class QuizSummaryViewController: UIViewController {
     
     @IBAction func close(_ sender: UIButton) {
         var navArray:Array = (self.navigationController?.viewControllers)!
-        self.navigationController?.popToViewController(navArray[0], animated: true)
+        _ = self.navigationController?.popToViewController(navArray[0], animated: true)
 
     }
     
