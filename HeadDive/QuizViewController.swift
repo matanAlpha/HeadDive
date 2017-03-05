@@ -85,7 +85,7 @@ class QuizViewController: UIViewController, UITableViewDelegate, UITableViewData
     {
         let index:String = String(stringInterpolationSegment: myQuiz.currentIndex + 1)
         let count:String = String(stringInterpolationSegment: myQuiz.questionCount )
-        return  index+"/"+count
+        return   "   מבחן "+index+"/"+count
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -179,7 +179,7 @@ class QuizViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         let cell:UITableViewCell = self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as UITableViewCell!
             // note that indexPath.section is used rather than indexPath.row
-            cell.textLabel?.text = currentQuestion.getAnswerByIndex(index: indexPath.section)
+            cell.textLabel?.text = "\(indexPath.section + 1). "+currentQuestion.getAnswerByIndex(index: indexPath.section)
             // add border and color
             cell.backgroundColor = UIColor.white
         
@@ -203,6 +203,8 @@ class QuizViewController: UIViewController, UITableViewDelegate, UITableViewData
                 }
             }
         
+        cell.textLabel?.font = UIFont(name: (cell.textLabel?.font.fontName)!, size: 25)
+        cell.textLabel?.textColor = UIColor.lightGray
         return cell
     }
     

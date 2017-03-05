@@ -44,7 +44,7 @@ class ViewController: UIViewController {
                 let q = Quiz()
                 q.createDemoQuiz()
                 ivc.quiz = q
-                ivc.title = "Quiz"
+                ivc.title = "מבחן"
             }
         } else if segue.identifier == StoryBorad.ShowPracticeSegue {
             if let ivc = segue.destination.contentViewControler as? PracticeViewController {
