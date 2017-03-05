@@ -75,10 +75,10 @@
             </objects>
             <point key="canvasLocation" x="1995.6521739130437" y="122.28260869565219"/>
         </scene>
-        <!--Quiz-->
+        <!--מבחן-->
         <scene sceneID="gn8-oV-IzP">
             <objects>
-                <viewController title="Quiz" id="ybs-nx-naF" customClass="EnterQuizViewController" customModule="HeadDive" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="מבחן" id="ybs-nx-naF" customClass="EnterQuizViewController" customModule="HeadDive" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pDY-kJ-6rh"/>
                         <viewControllerLayoutGuide type="bottom" id="a0r-QV-iRf"/>
@@ -210,10 +210,10 @@
             </objects>
             <point key="canvasLocation" x="3773.5999999999999" y="-345.87706146926541"/>
         </scene>
-        <!--End test confirmation-->
+        <!--מבחן - אישור סיום-->
         <scene sceneID="mJc-ex-fzn">
             <objects>
-                <viewController title="End test confirmation" id="MVP-Fg-c5v" customClass="DoneQuizViewController" customModule="HeadDive" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="מבחן - אישור סיום" id="MVP-Fg-c5v" customClass="DoneQuizViewController" customModule="HeadDive" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6sJ-zD-YEr"/>
                         <viewControllerLayoutGuide type="bottom" id="ltb-nI-Ohl"/>
@@ -280,10 +280,10 @@
             </objects>
             <point key="canvasLocation" x="4615.9420289855079" y="-238.04347826086959"/>
         </scene>
-        <!--Test summary-->
+        <!--מבחן - סיכום-->
         <scene sceneID="wgM-9B-2kQ">
             <objects>
-                <viewController title="Test summary" id="ZAd-9l-auA" customClass="QuizSummaryViewController" customModule="HeadDive" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="מבחן - סיכום" id="ZAd-9l-auA" customClass="QuizSummaryViewController" customModule="HeadDive" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WYg-r2-cTD"/>
                         <viewControllerLayoutGuide type="bottom" id="RAD-UM-uxx"/>
@@ -294,7 +294,7 @@
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="fdd-j1-OWU">
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="סיימת את התרגול" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lDf-IB-bjI">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="סיימת את המבחן" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lDf-IB-bjI">
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
