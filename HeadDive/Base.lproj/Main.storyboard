@@ -166,25 +166,25 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LP1-RL-fkA">
-                                <frame key="frameInset" minX="57" minY="497" width="31" height="30"/>
+                                <frame key="frameInset" minX="54" minY="497" width="38" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Prev"/>
+                                <state key="normal" title="הקודם"/>
                                 <connections>
                                     <action selector="prevButton:" destination="YGn-KA-VVf" eventType="touchUpInside" id="jES-ms-8gK"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oj1-Cx-xFU">
-                                <frame key="frameInset" minX="171" minY="497" width="32" height="30"/>
+                                <frame key="frameInset" minX="172" minY="497" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Next"/>
+                                <state key="normal" title="הבא"/>
                                 <connections>
                                     <action selector="middleButtonClicked:" destination="YGn-KA-VVf" eventType="touchUpInside" id="8gt-q6-CjI"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eP8-NJ-Sc1">
-                                <frame key="frameInset" minX="276" minY="497" width="32" height="30"/>
+                                <frame key="frameInset" minX="277" minY="497" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Next"/>
+                                <state key="normal" title="הבא"/>
                                 <connections>
                                     <action selector="nextButton:" destination="YGn-KA-VVf" eventType="touchUpInside" id="tT6-Fw-jWg"/>
                                 </connections>
