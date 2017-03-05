@@ -44,7 +44,9 @@ class QuizViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var middleButton: UIButton!
     
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var tableViewWidthConstraint: UITableView!
     
+    @IBOutlet weak var tableViewHeightConstraint: NSLayoutConstraint!
     @IBAction func middleButtonClicked(_ sender: UIButton) {
 
         if(myQuiz.isFirstQuestion)
@@ -58,6 +60,13 @@ class QuizViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
 
     }
+    
+    override func updateViewConstraints() {
+        super.updateViewConstraints()
+        tableViewHeightConstraint?.constant = tableView.contentSize.height
+        
+    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
